@@ -6,11 +6,8 @@ function ListTermin() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [postTerminlist, setTerminlist] = useState([]);
-    <div className="pageShape">
-        <h1 className="Page"> Termine listen</h1>
-    </div>
     useEffect(() => {
-        fetch("/termineListen")
+        fetch("/Termine/alleTermine")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -30,7 +27,8 @@ function ListTermin() {
         return <div> Loading...</div>;
     } else {
         return (
-            <div>
+            <div className="pageShape">
+                < h1 className="Page" > Termine listen</h1 >
                 {
                     postTerminlist.map(termin => (
                         <Post name={termin.name} nachname={termin.nachname} Datum={termin.Datum} Doktor={termin.Doktor}></Post>

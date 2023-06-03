@@ -1,12 +1,12 @@
 import React from "react";
 
 function PostPatient(props) {
-    const [name, nachname, Ausweisnummer, Telephonenummer] = props;
+    const { name, nachname, ausweisnummer, phonenummer } = props;
     return (
-        <div>
-            {name} {nachname} {Ausweisnummer} {Telephonenummer}
+        <div className="postContainer">
+            {ausweisnummer} {name} {nachname} {phonenummer}
         </div>
-    )
+    );
 }
 
 export default PostPatient;

@@ -20,16 +20,16 @@ function App() {
             <Route exact path="/home">
               <Home />
             </Route>
-            <Route exact path="/patienteHinzufuegen">
+            <Route exact path="/Patiente/neuerPatient">
               < AddPatient />
             </Route>
-            <Route exact path="/patienteListen">
+            <Route exact path="/Patiente/allePatiente">
               < ListPatient />
             </Route>
-            <Route exact path="/termineErstellen">
+            <Route exact path="/Termine/neuerTermin">
               < AddTermin />
             </Route>
-            <Route exact path="/termineListen">
+            <Route exact path="/Termine/alleTermine">
               < ListTermin />
             </Route>
 

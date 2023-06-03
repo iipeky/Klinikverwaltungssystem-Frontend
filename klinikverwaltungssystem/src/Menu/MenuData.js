@@ -11,22 +11,22 @@ export const MenuData = [
     },
     {
         title: "Patiente hinzufügen",
-        link: "/patienteHinzufuegen",
+        link: "/Patiente/neuerPatient",
         icon: <img src={person} width={30} height={30} alt="" />,
     },
     {
         title: "Patiente listen",
-        link: "/patienteListen",
+        link: "/Patiente/allePatiente",
         icon: <img src={peopleList} width={30} height={30} alt="" />,
     },
     {
         title: "Termine erstellen",
-        link: "/termineErstellen",
+        link: "/Termine/neuerTermin",
         icon: <img src={termin} width={30} height={30} alt="" />,
     },
     {
         title: "Termine listen",
-        link: "/termineListen",
+        link: "/Termine/alleTermine",
         icon: <img src={list} width={30} height={30} alt="" />,
     },
 ];

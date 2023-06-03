@@ -2,8 +2,30 @@ import { useState } from "react";
 const AddPatient = () => {
     const [name, setName] = useState("");
     const [nachname, setNachame] = useState("");
-    const [ausweis, setAusweisnummer] = useState("");
-    const [telephone, setTelephonenummer] = useState("");
+    const [ausweisnummer, setAusweisnummer] = useState("");
+    const [phonenummer, setTelephonenummer] = useState("");
+    const savePatient = () => {
+        fetch("/Patiente/neuerPatient",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: name,
+                    nachname: nachname,
+                    ausweisnummer: ausweisnummer,
+                    phonenummer: phonenummer,
+                }),
+
+            })
+            .then((res) => res.json())
+            .catch((err) => console.log("error"))
+    }
+    const handlePatient = () => {
+        savePatient();
+    }
+
     return (
         <div className="AddPatient">
             <div className="pageShape">
@@ -29,17 +51,17 @@ const AddPatient = () => {
                     <input
                         type="text"
                         required
-                        value={ausweis}
+                        value={ausweisnummer}
                         onChange={(e) => setAusweisnummer(e.target.value)}
                     />
                     <label> Telephonenummer: </label>
                     <input
                         type="text"
                         required
-                        value={telephone}
+                        value={phonenummer}
                         onChange={(e) => setTelephonenummer(e.target.value)}
                     />
-                    <button>Add Patient</button>
+                    <button onClick={handlePatient}>Add Patient</button>
                     <p>{name}</p>
                 </form>
             </div>

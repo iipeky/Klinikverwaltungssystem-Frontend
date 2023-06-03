@@ -3,14 +3,12 @@ import { useState } from "react";
 import PostPatient from "../Post/PostPatient";
 
 function ListPatient() {
+
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [postPatientlist, setPatientlist] = useState([]);
-    <div className="pageShape">
-        <h1 className="Page"> Patiente listen</h1>
-    </div>
     useEffect(() => {
-        fetch("/patienteListen")
+        fetch("/Patiente/allePatiente")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -30,13 +28,14 @@ function ListPatient() {
         return <div> Loading...</div>;
     } else {
         return (
-            <div>
+            <div className="pageShape">
+
                 {
                     postPatientlist.map(patient => (
-                        <PostPatient name={patient.name} nachname={patient.nachname} Ausweisnummer={patient.Ausweisnummer} Telephonenummer={patient.Telephonenummer}></PostPatient>
+                        <PostPatient ausweisnummer={patient.ausweisnummer} name={patient.name} nachname={patient.nachname} phonenummer={patient.phonenummer}></PostPatient>
                     ))
                 }
-            </div>
+            </div >
         );
     }
 
