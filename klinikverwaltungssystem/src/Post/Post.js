@@ -1,10 +1,13 @@
 import React from "react";
 
 function Post(props) {
-    const { name, nachname, Datum, Doktor } = props;
+    const { zeit, terminDatum, patient, doktor } = props;
+    //const [patient] = patientinfo;
     return (
         <div className="postContainer">
-            {name} {nachname} {Datum} {Doktor}
+            {zeit} {terminDatum}
+            {patient}
+            {doktor}
         </div>
     )
 }

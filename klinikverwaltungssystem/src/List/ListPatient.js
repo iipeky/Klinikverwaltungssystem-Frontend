@@ -28,8 +28,11 @@ function ListPatient() {
         return <div> Loading...</div>;
     } else {
         return (
-            <div className="pageShape">
 
+            <div className="lists">
+                <div className="pageShape">
+                    <h1 className="Page"> Patiente listen</h1>
+                </div>
                 {
                     postPatientlist.map(patient => (
                         <PostPatient ausweisnummer={patient.ausweisnummer} name={patient.name} nachname={patient.nachname} phonenummer={patient.phonenummer}></PostPatient>
